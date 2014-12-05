@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define FONT_SIZE 40
-#define SELF_SIZE 70
+#define SELF_SIZE 80
 
 #define BACKGROUND_COLOR [UIColor colorWithWhite:0.5 alpha:0.8]
 

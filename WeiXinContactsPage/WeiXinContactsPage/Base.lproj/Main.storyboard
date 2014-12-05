@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="eTk-UY-1Vb">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="b1F-m7-NFH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pR2-cg-JF8"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46T-m8-Yfw" customClass="ContactsNameFirstLetterView">
+                                <rect key="frame" x="574" y="28" width="26" height="564"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="aLy-tF-RAa"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSX-bJ-zRQ" customClass="LetterLabel">
+                                <rect key="frame" x="265" y="265" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="fCt-Ka-i4l"/>
+                                    <constraint firstAttribute="width" constant="80" id="o8c-Sd-xFn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eTk-UY-1Vb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="24f-RS-A6G"/>
+                            <constraint firstItem="eTk-UY-1Vb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FYK-ZR-nhU"/>
+                            <constraint firstAttribute="centerX" secondItem="SSX-bJ-zRQ" secondAttribute="centerX" constant="-5" id="KZg-cO-5xL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="46T-m8-Yfw" secondAttribute="bottom" constant="8" id="L7N-TZ-RtH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eTk-UY-1Vb" secondAttribute="trailing" constant="-16" id="MoJ-8c-GfI"/>
+                            <constraint firstItem="46T-m8-Yfw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="XaC-BR-26t"/>
+                            <constraint firstAttribute="centerY" secondItem="SSX-bJ-zRQ" secondAttribute="centerY" constant="-5" id="ewi-7a-ikt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eTk-UY-1Vb" secondAttribute="bottom" id="nS0-yg-E0i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="46T-m8-Yfw" secondAttribute="trailing" constant="-16" id="vMI-VA-QE5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cf" destination="46T-m8-Yfw" id="MYu-M9-KBk"/>
+                        <outlet property="ll" destination="SSX-bJ-zRQ" id="7v2-58-NjR"/>
+                        <outlet property="tableView" destination="eTk-UY-1Vb" id="PIB-F1-VXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="406" y="478"/>
         </scene>
     </scenes>
 </document>

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ContactsNameFirstLetterView.h"
 
-@interface ViewController : UIViewController<ChoiceLetterDelegate>
+@interface ViewController : UIViewController<ChoiceLetterDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @end
 
